@@ -16,14 +16,22 @@ The tool uses a GUI-based app to run. Simply download the archive from our Relea
 Step 0: Put each icon you want to use in .ico format in the folder which you want to apply it to.<p>
 ![Alt Text](https://i.imgur.com/ls58rg0.gif)
 <br>
+<br>
+<br>
 Step 1: Open the S Icon Master app and click the Select button, then choose the parent directory containing all the folders you want to apply icons to.<p>
 ![Alt Text](https://i.imgur.com/nBA1Nnl.gif)
+<br>
+<br>
 <br>
 Step 2: Click the Search Selected button to search for available icons. NOTE: Folders with no icons inside them will be ignored.<p>
 ![Alt Text](https://i.imgur.com/zHoXCyy.gif)
 <br>
+<br>
+<br>
 Step 3: You will see a list of every folder containing an icon. Simply click Apply Icons to apply each icon to the folder it's in! NOTE: While the operation will complete almost instantly, some of your applied icons may not show up until after Windows refreshes its icon cache. Refreshing, reopening Explorer, and restarting your computer may help for you to see your new icons quicker!<p>
 ![Alt Text](https://i.imgur.com/FXAdBEb.gif)
+<br>
+<br>
 <br>
 ## FAQ
 How do I use this app?
