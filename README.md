@@ -13,7 +13,7 @@ The tool uses a GUI-based app to run. Simply download the archive from our Relea
 <b>Usage Instructions:</b>
 
 Step 0: Put each icon you want to use in .ico format in the folder which you want to apply it to.
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/ls58rg0" data-context="false" ><a href="//imgur.com/a/ls58rg0"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+![Alt Text](https://i.imgur.com/ls58rg0.gif)
 
 Step 1: Open the S Icon Master app and click the Select button, then choose the parent directory containing all the folders you want to apply icons to.
 
