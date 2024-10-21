@@ -3,8 +3,7 @@ In Windows, it is a tedious process to apply icons to folders, manually having t
 
 
 Special thanks to:
-
--My friend Aureal, for giving me the inspiration for this project. (He really needed this one!)
+<p>-My friend Aureal, for giving me the inspiration for this project. (He really needed this one!)
 
 ## Prerequisites
 -This app was built using .NET 6.0, and so requires .NET Runtime 6.0 or higher to run. ([.NET Download Link](https://dotnet.microsoft.com/en-us/download))
