@@ -35,6 +35,7 @@
             SearchButton = new Button();
             ExitButton = new Button();
             pictureBox1 = new PictureBox();
+            ConsoleButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -109,13 +110,25 @@
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
+            // ConsoleButton
+            // 
+            ConsoleButton.BackColor = Color.FromArgb(24, 0, 0);
+            ConsoleButton.ForeColor = Color.White;
+            ConsoleButton.Location = new Point(-1, -1);
+            ConsoleButton.Name = "ConsoleButton";
+            ConsoleButton.Size = new Size(58, 23);
+            ConsoleButton.TabIndex = 11;
+            ConsoleButton.Text = "Console";
+            ConsoleButton.UseVisualStyleBackColor = false;
+            ConsoleButton.Click += ConsoleButton_Click;
+            // 
             // SelectDirForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(255, 128, 128);
             ClientSize = new Size(323, 305);
             ControlBox = false;
+            Controls.Add(ConsoleButton);
             Controls.Add(pictureBox1);
             Controls.Add(ExitButton);
             Controls.Add(SearchButton);
@@ -141,5 +154,6 @@
         private Button SearchButton;
         private Button ExitButton;
         private PictureBox pictureBox1;
+        private Button ConsoleButton;
     }
 }

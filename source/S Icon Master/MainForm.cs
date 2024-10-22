@@ -13,12 +13,14 @@ namespace S_Icon_Master
     public partial class MainForm : Form
     {
         string dirPath;
+        ConsoleForm console;
         List<string> icons = new List<string>();
         List<string> dirs = new List<string>();
-        public MainForm(string dirPath)
+        public MainForm(string dirPath, ConsoleForm console)
         {
             InitializeComponent();
             this.dirPath = dirPath;
+            this.console = console;
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -43,6 +45,7 @@ namespace S_Icon_Master
                 if (iconsCurr.Length > 0)
                 {
                     DirList.Items.Add(dir);
+                    console.DirList.Items.Add("Found directory "+ dir.Split("\\")[dir.Split("\\").Length - 1] + " with icon.");
                     dirs.Add(dir);
                     icons.Add(iconsCurr[0].Split("\\")[iconsCurr[0].Split("\\").Length - 1]);
                 }
@@ -53,6 +56,7 @@ namespace S_Icon_Master
         {
             for (int i = 0; i < DirList.Items.Count; i++)
             {
+                console.DirList.Items.Add("Applying icon to " + dirs[i].Split("\\")[dirs[i].Split("\\").Length - 1]+"...");
                 string iniPath = Path.Combine(dirs[i], "desktop.ini");
                 List<string> iniContents = new List<string>();
                 iniContents.Clear();
@@ -68,10 +72,27 @@ namespace S_Icon_Master
                 }
                 File.WriteAllLines(iniPath, iniContents);
                 File.SetAttributes(iniPath, FileAttributes.System | FileAttributes.Hidden);
+                if(hideCheckBox.Checked)
+                {
+                    File.SetAttributes(Path.Combine(dirs[i], icons[i]), FileAttributes.Hidden);
+                }
                 DirectoryInfo dirInfo = new DirectoryInfo(dirs[i]);
                 dirInfo.Attributes |= FileAttributes.System;
             }
             MessageBox.Show("Applied all " + DirList.Items.Count + " available icons!", "Done!", MessageBoxButtons.OK);
+            console.DirList.Items.Add("Applied all " + DirList.Items.Count + " available icons!");
+        }
+
+        private void ConsoleButton_Click(object sender, EventArgs e)
+        {
+            if (console.Visible)
+            {
+                console.Hide();
+            }
+            else
+            {
+                console.Show();
+            }
         }
     }
 }

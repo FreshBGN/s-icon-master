@@ -3,9 +3,11 @@ namespace S_Icon_Master
     public partial class SelectDirForm : Form
     {
         bool validDir = false;
-        public SelectDirForm()
+        ConsoleForm console;
+        public SelectDirForm(ConsoleForm console)
         {
             InitializeComponent();
+            this.console = console;
         }
 
         private void SelectButton_Click(object sender, EventArgs e)
@@ -14,15 +16,18 @@ namespace S_Icon_Master
             {
                 fbd.Description = "Select a parent directory";
                 fbd.ShowNewFolderButton = false;
+                console.DirList.Items.Add("Opening directory selection dialog...");
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     ParentDirText.Text = fbd.SelectedPath;
                     validDir = true;
+                    console.DirList.Items.Add("Directory selected successfully!");
                 }
                 else
                 {
                     ParentDirText.Text = "Error: No directory selected or directory is invalid.";
                     validDir = false;
+                    console.DirList.Items.Add("Error: No directory selected or directory is invalid.");
                 }
             }
         }
@@ -36,9 +41,26 @@ namespace S_Icon_Master
         {
             if (validDir)
             {
-                MainForm mainForm = new MainForm(ParentDirText.Text);
+                MainForm mainForm = new MainForm(ParentDirText.Text, console);
                 mainForm.Show();
+                console.DirList.Items.Add("Searching directory...");
                 Hide();
+            }
+            else
+            {
+                console.DirList.Items.Add("Error: No directory selected or directory is invalid.");
+            }
+        }
+
+        private void ConsoleButton_Click(object sender, EventArgs e)
+        {
+            if (console.Visible)
+            {
+                console.Hide();
+            }
+            else
+            {
+                console.Show();
             }
         }
     }

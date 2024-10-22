@@ -14,7 +14,8 @@ namespace S_Icon_Master
             Application.SetCompatibleTextRenderingDefault(false);
             Application.SetHighDpiMode(HighDpiMode.DpiUnaware);
             ApplicationConfiguration.Initialize();
-            Application.Run(new SelectDirForm());
+            ConsoleForm console = new ConsoleForm();
+            Application.Run(new SelectDirForm(console));
         }
     }
 }

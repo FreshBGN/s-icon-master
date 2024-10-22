@@ -34,6 +34,8 @@
             ExitButton = new Button();
             DirList = new ListBox();
             pictureBox1 = new PictureBox();
+            hideCheckBox = new CheckBox();
+            ConsoleButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -83,7 +85,7 @@
             DirList.Items.AddRange(new object[] { "(None)" });
             DirList.Location = new Point(12, 83);
             DirList.Name = "DirList";
-            DirList.Size = new Size(304, 514);
+            DirList.Size = new Size(304, 499);
             DirList.TabIndex = 7;
             // 
             // pictureBox1
@@ -97,13 +99,37 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
+            // hideCheckBox
+            // 
+            hideCheckBox.AutoSize = true;
+            hideCheckBox.ForeColor = Color.White;
+            hideCheckBox.Location = new Point(78, 588);
+            hideCheckBox.Name = "hideCheckBox";
+            hideCheckBox.Size = new Size(172, 19);
+            hideCheckBox.TabIndex = 9;
+            hideCheckBox.Text = "Hide icon file after applying";
+            hideCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // ConsoleButton
+            // 
+            ConsoleButton.BackColor = Color.FromArgb(24, 0, 0);
+            ConsoleButton.ForeColor = Color.White;
+            ConsoleButton.Location = new Point(-1, -1);
+            ConsoleButton.Name = "ConsoleButton";
+            ConsoleButton.Size = new Size(58, 23);
+            ConsoleButton.TabIndex = 10;
+            ConsoleButton.Text = "Console";
+            ConsoleButton.UseVisualStyleBackColor = false;
+            ConsoleButton.Click += ConsoleButton_Click;
+            // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(255, 128, 128);
             ClientSize = new Size(328, 673);
             ControlBox = false;
+            Controls.Add(ConsoleButton);
+            Controls.Add(hideCheckBox);
             Controls.Add(pictureBox1);
             Controls.Add(DirList);
             Controls.Add(ExitButton);
@@ -126,5 +152,7 @@
         private Button ExitButton;
         private ListBox DirList;
         private PictureBox pictureBox1;
+        private CheckBox hideCheckBox;
+        private Button ConsoleButton;
     }
 }
