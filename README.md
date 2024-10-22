@@ -48,7 +48,7 @@ What happens if there are multiple icons in the same folder?
 <br>
 <br>
 Why does Windows Defender detect the program as a Wacatac threat?
-<p>-Windows Defender detects the DLL shipped with a program as a Wacatac threat because it modifies and deletes desktop.ini files in the folders the icons are being applied to. The desktop.ini files generated and overwritten by the program are considered system files for this method to work. This is a false positive caused by Machine Learning/AI algorithms in the antivirus, and regular antivirus won't detect it. Running the file through VirusTotal, only 3 vendors identify it as suspicious and they're all ML/AI-based:
+<p>-Windows Defender detects the DLL shipped with the program as a Wacatac threat because it modifies and deletes desktop.ini files in the folders the icons are being applied to. The desktop.ini files generated and overwritten by the program are considered system files for this method to work. This is a false positive caused by Machine Learning/AI algorithms in the antivirus, and regular antivirus won't detect it. Running the file through VirusTotal, only 3 vendors identify it as suspicious and they're all ML/AI-based:
 
 ![Alt Text](https://i.imgur.com/rOikujI.png)
 
