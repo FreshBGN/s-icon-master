@@ -37,17 +37,17 @@ Step 3: You will see a list of every folder containing an icon. Simply click App
 ![Alt Text](https://i.imgur.com/FXAdBEb.gif)
 <br>
 ## FAQ
-How do I use this app?
+<b>How do I use this app?</b>
 <p>-See "Usage" section.
 <br>
 <br>
 <br>
-What happens if there are multiple icons in the same folder?
+<b>What happens if there are multiple icons in the same folder?</b>
 <p>-Whichever icon comes first alphabetically will be applied.
 <br>
 <br>
 <br>
-Why does Windows Defender detect the program as a Wacatac threat?
+<b>Why does Windows Defender detect the program as a Wacatac threat?</b>
 <p>-Windows Defender detects the DLL shipped with the program as a Wacatac threat because it modifies and deletes desktop.ini files in the folders the icons are being applied to. The desktop.ini files generated and overwritten by the program are considered system files for this method to work. This is a false positive caused by Machine Learning/AI algorithms in the antivirus, and regular antivirus won't detect it. Running the file through VirusTotal, only 3 vendors identify it as suspicious and they're all ML/AI-based:
 
 ![Alt Text](https://i.imgur.com/rOikujI.png)
@@ -56,17 +56,17 @@ If you're still worried, please check the source code yourself before downloadin
 <br>
 <br>
 <br>
-Do you plan on adding more features?
+<b>Do you plan on adding more features?</b>
 <p>-Maybe, if I feel like it. This was more of a one-and-done little tool that I wrote in a couple of hours, but if there's enough interest I might add more stuff.
 <br>
 <br>
 <br>
-Do you plan on supporting this project with bugfixes, etc.?
+<b>Do you plan on supporting this project with bugfixes, etc.?</b>
 <p>-Most likely yes, I like my apps to work properly, but if there are any Windows issues involved I probably won't go out of my way to work around them if it's anything too complex (again, unless there's a lot of interest).
 <br>
 <br>
 <br>
-Can the developer be contacted for suggestions?
+<b>Can the developer be contacted for suggestions?</b>
 <p>-Yes! You may email me any suggestions if you'd like. I like to stay on top of my inbox but I can't make any guarantee some emails won't slip through the cracks.
 <br>
 <br>
