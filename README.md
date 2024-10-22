@@ -52,7 +52,7 @@ Why does Windows Defender detect the program as a Wacatac threat?
 
 ![Alt Text](https://i.imgur.com/rOikujI.png)
 
-If you're still worried, please check the source code yourself before downloading and compile your own Binary from it in Visual Studio.
+If you're still worried, please check the source code yourself before downloading and compile your own Binary from it in Visual Studio. I have removed the DLL from the source so you can download it without any virus warnings, though I can't do the same for the Release because the program requires the DLL to run.
 <br>
 <br>
 <br>
