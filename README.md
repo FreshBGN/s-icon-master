@@ -41,19 +41,30 @@ How do I use this app?
 <p>-See "Usage" section.
 <br>
 <br>
+<br>
 What happens if there are multiple icons in the same folder?
 <p>-Whichever icon comes first alphabetically will be applied.
+<br>
+<br>
+<br>
+Why does Windows Defender detect the program as a Wacatac threat?
+<p>-Windows Defender detects the DLL shipped with a program as a Wacatac threat because it modifies and deletes desktop.ini files in the folders the icons are being applied to. The desktop.ini files generated and overwritten by the program are considered system files for this method to work. This is a false positive caused by Machine Learning/AI algorithms in the antivirus, and regular antivirus won't detect it. Running the file through VirusTotal, only 3 vendors identify it as suspicious and they're all ML/AI-based:
+![Alt Text](https://i.imgur.com/rOikujI.png)
+<br>
 <br>
 <br>
 Do you plan on adding more features?
 <p>-Maybe, if I feel like it. This was more of a one-and-done little tool that I wrote in a couple of hours, but if there's enough interest I might add more stuff.
 <br>
 <br>
+<br>
 Do you plan on supporting this project with bugfixes, etc.?
 <p>-Most likely yes, I like my apps to work properly, but if there are any Windows issues involved I probably won't go out of my way to work around them if it's anything too complex (again, unless there's a lot of interest).
 <br>
 <br>
+<br>
 Can the developer be contacted for suggestions?
 <p>-Yes! You may email me any suggestions if you'd like. I like to stay on top of my inbox but I can't make any guarantee some emails won't slip through the cracks.
+<br>
 <br>
 <br>
