@@ -45,7 +45,7 @@ namespace S_Icon_Master
                 if (iconsCurr.Length > 0)
                 {
                     DirList.Items.Add(dir);
-                    console.DirList.Items.Add("Found directory "+ dir.Split("\\")[dir.Split("\\").Length - 1] + " with icon.");
+                    console.DirList.Items.Add("Found directory " + dir.Split("\\")[dir.Split("\\").Length - 1] + " with icon.");
                     dirs.Add(dir);
                     icons.Add(iconsCurr[0].Split("\\")[iconsCurr[0].Split("\\").Length - 1]);
                 }
@@ -54,33 +54,41 @@ namespace S_Icon_Master
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < DirList.Items.Count; i++)
+            if (DirList.Items.Count > 0)
             {
-                console.DirList.Items.Add("Applying icon to " + dirs[i].Split("\\")[dirs[i].Split("\\").Length - 1]+"...");
-                string iniPath = Path.Combine(dirs[i], "desktop.ini");
-                List<string> iniContents = new List<string>();
-                iniContents.Clear();
-                iniContents.Add("[.ShellClassInfo]");
-                iniContents.Add("IconResource=.\\" + icons[i] + ",0");
-                iniContents.Add("[ViewState]");
-                iniContents.Add("Mode=");
-                iniContents.Add("Vid=");
-                iniContents.Add("FolderType=Generic");
-                if (File.Exists(iniPath))
+                for (int i = 0; i < DirList.Items.Count; i++)
                 {
-                    File.Delete(iniPath);
+                    console.DirList.Items.Add("Applying icon to " + dirs[i].Split("\\")[dirs[i].Split("\\").Length - 1] + "...");
+                    string iniPath = Path.Combine(dirs[i], "desktop.ini");
+                    List<string> iniContents = new List<string>();
+                    iniContents.Clear();
+                    iniContents.Add("[.ShellClassInfo]");
+                    iniContents.Add("IconResource=.\\" + icons[i] + ",0");
+                    iniContents.Add("[ViewState]");
+                    iniContents.Add("Mode=");
+                    iniContents.Add("Vid=");
+                    iniContents.Add("FolderType=Generic");
+                    if (File.Exists(iniPath))
+                    {
+                        File.Delete(iniPath);
+                    }
+                    File.WriteAllLines(iniPath, iniContents);
+                    File.SetAttributes(iniPath, FileAttributes.System | FileAttributes.Hidden);
+                    if (hideCheckBox.Checked)
+                    {
+                        File.SetAttributes(Path.Combine(dirs[i], icons[i]), FileAttributes.Hidden);
+                    }
+                    DirectoryInfo dirInfo = new DirectoryInfo(dirs[i]);
+                    dirInfo.Attributes |= FileAttributes.System;
                 }
-                File.WriteAllLines(iniPath, iniContents);
-                File.SetAttributes(iniPath, FileAttributes.System | FileAttributes.Hidden);
-                if(hideCheckBox.Checked)
-                {
-                    File.SetAttributes(Path.Combine(dirs[i], icons[i]), FileAttributes.Hidden);
-                }
-                DirectoryInfo dirInfo = new DirectoryInfo(dirs[i]);
-                dirInfo.Attributes |= FileAttributes.System;
+                MessageBox.Show("Applied all " + DirList.Items.Count + " available icons!", "Done!", MessageBoxButtons.OK);
+                console.DirList.Items.Add("Applied all " + DirList.Items.Count + " available icons!");
             }
-            MessageBox.Show("Applied all " + DirList.Items.Count + " available icons!", "Done!", MessageBoxButtons.OK);
-            console.DirList.Items.Add("Applied all " + DirList.Items.Count + " available icons!");
+            else
+            {
+                MessageBox.Show("No icons found to apply.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                console.DirList.Items.Add("Error: No icons found to apply.");
+            }
         }
 
         private void ConsoleButton_Click(object sender, EventArgs e)

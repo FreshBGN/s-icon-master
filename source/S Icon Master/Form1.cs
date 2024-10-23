@@ -28,6 +28,7 @@ namespace S_Icon_Master
                     ParentDirText.Text = "Error: No directory selected or directory is invalid.";
                     validDir = false;
                     console.DirList.Items.Add("Error: No directory selected or directory is invalid.");
+                    MessageBox.Show("No directory selected or directory is invalid.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -41,14 +42,15 @@ namespace S_Icon_Master
         {
             if (validDir)
             {
+                console.DirList.Items.Add("Searching directory...");
                 MainForm mainForm = new MainForm(ParentDirText.Text, console);
                 mainForm.Show();
-                console.DirList.Items.Add("Searching directory...");
                 Hide();
             }
             else
             {
                 console.DirList.Items.Add("Error: No directory selected or directory is invalid.");
+                MessageBox.Show("No directory selected or directory is invalid.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

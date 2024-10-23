@@ -33,7 +33,7 @@
             // 
             // DirList
             // 
-            DirList.BackColor = Color.FromArgb(24, 0, 0);
+            DirList.BackColor = Color.FromArgb(50, 4, 150);
             DirList.ForeColor = Color.White;
             DirList.FormattingEnabled = true;
             DirList.ItemHeight = 15;
@@ -47,7 +47,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 128, 128);
+            BackColor = Color.FromArgb(13, 1, 39);
             ClientSize = new Size(533, 231);
             ControlBox = false;
             Controls.Add(DirList);
@@ -55,7 +55,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             Name = "ConsoleForm";
-            Text = "ConsoleForm";
+            Text = "S Icon Master - Console";
             ResumeLayout(false);
         }
 

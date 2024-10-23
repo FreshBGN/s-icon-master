@@ -30,19 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectDirForm));
             label1 = new Label();
-            SelectButton = new Button();
             ParentDirText = new RichTextBox();
-            SearchButton = new Button();
-            ExitButton = new Button();
             pictureBox1 = new PictureBox();
-            ConsoleButton = new Button();
+            SelectButton = new PictureBox();
+            SearchButton = new PictureBox();
+            ExitButton = new PictureBox();
+            ConsoleButton = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SelectButton).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SearchButton).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ExitButton).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ConsoleButton).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.Location = new Point(22, 38);
@@ -52,21 +57,9 @@
             label1.Text = "Select the parent directory to search in:";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // SelectButton
-            // 
-            SelectButton.BackColor = Color.FromArgb(24, 0, 0);
-            SelectButton.ForeColor = Color.White;
-            SelectButton.Location = new Point(90, 109);
-            SelectButton.Name = "SelectButton";
-            SelectButton.Size = new Size(142, 35);
-            SelectButton.TabIndex = 1;
-            SelectButton.Text = "Select";
-            SelectButton.UseVisualStyleBackColor = false;
-            SelectButton.Click += SelectButton_Click;
-            // 
             // ParentDirText
             // 
-            ParentDirText.BackColor = Color.FromArgb(24, 0, 0);
+            ParentDirText.BackColor = Color.FromArgb(50, 4, 150);
             ParentDirText.ForeColor = Color.White;
             ParentDirText.Location = new Point(22, 62);
             ParentDirText.Name = "ParentDirText";
@@ -75,65 +68,87 @@
             ParentDirText.TabIndex = 3;
             ParentDirText.Text = "(None)";
             // 
-            // SearchButton
-            // 
-            SearchButton.BackColor = Color.FromArgb(24, 0, 0);
-            SearchButton.ForeColor = Color.White;
-            SearchButton.Location = new Point(167, 239);
-            SearchButton.Name = "SearchButton";
-            SearchButton.Size = new Size(144, 54);
-            SearchButton.TabIndex = 4;
-            SearchButton.Text = "Search Selected";
-            SearchButton.UseVisualStyleBackColor = false;
-            SearchButton.Click += SearchButton_Click;
-            // 
-            // ExitButton
-            // 
-            ExitButton.BackColor = Color.FromArgb(24, 0, 0);
-            ExitButton.ForeColor = Color.White;
-            ExitButton.Location = new Point(12, 239);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(149, 54);
-            ExitButton.TabIndex = 5;
-            ExitButton.Text = "Exit";
-            ExitButton.UseVisualStyleBackColor = false;
-            ExitButton.Click += ExitButton_Click;
-            // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(222, -1);
+            pictureBox1.Location = new Point(222, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 36);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
+            // SelectButton
+            // 
+            SelectButton.BackColor = Color.Transparent;
+            SelectButton.BackgroundImageLayout = ImageLayout.None;
+            SelectButton.Cursor = Cursors.Hand;
+            SelectButton.Image = Properties.Resources.button_select;
+            SelectButton.Location = new Point(90, 109);
+            SelectButton.Name = "SelectButton";
+            SelectButton.Size = new Size(142, 27);
+            SelectButton.SizeMode = PictureBoxSizeMode.StretchImage;
+            SelectButton.TabIndex = 12;
+            SelectButton.TabStop = false;
+            SelectButton.Click += SelectButton_Click;
+            // 
+            // SearchButton
+            // 
+            SearchButton.BackColor = Color.Transparent;
+            SearchButton.BackgroundImageLayout = ImageLayout.None;
+            SearchButton.Cursor = Cursors.Hand;
+            SearchButton.Image = (Image)resources.GetObject("SearchButton.Image");
+            SearchButton.Location = new Point(167, 247);
+            SearchButton.Name = "SearchButton";
+            SearchButton.Size = new Size(142, 46);
+            SearchButton.SizeMode = PictureBoxSizeMode.StretchImage;
+            SearchButton.TabIndex = 13;
+            SearchButton.TabStop = false;
+            SearchButton.Click += SearchButton_Click;
+            // 
+            // ExitButton
+            // 
+            ExitButton.BackColor = Color.Transparent;
+            ExitButton.BackgroundImageLayout = ImageLayout.None;
+            ExitButton.Cursor = Cursors.Hand;
+            ExitButton.Image = (Image)resources.GetObject("ExitButton.Image");
+            ExitButton.Location = new Point(12, 247);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(142, 46);
+            ExitButton.SizeMode = PictureBoxSizeMode.StretchImage;
+            ExitButton.TabIndex = 14;
+            ExitButton.TabStop = false;
+            ExitButton.Click += ExitButton_Click;
+            // 
             // ConsoleButton
             // 
-            ConsoleButton.BackColor = Color.FromArgb(24, 0, 0);
-            ConsoleButton.ForeColor = Color.White;
-            ConsoleButton.Location = new Point(-1, -1);
+            ConsoleButton.BackColor = Color.Transparent;
+            ConsoleButton.BackgroundImageLayout = ImageLayout.None;
+            ConsoleButton.Cursor = Cursors.Hand;
+            ConsoleButton.Image = (Image)resources.GetObject("ConsoleButton.Image");
+            ConsoleButton.Location = new Point(1, 1);
             ConsoleButton.Name = "ConsoleButton";
-            ConsoleButton.Size = new Size(58, 23);
-            ConsoleButton.TabIndex = 11;
-            ConsoleButton.Text = "Console";
-            ConsoleButton.UseVisualStyleBackColor = false;
+            ConsoleButton.Size = new Size(58, 15);
+            ConsoleButton.SizeMode = PictureBoxSizeMode.StretchImage;
+            ConsoleButton.TabIndex = 15;
+            ConsoleButton.TabStop = false;
             ConsoleButton.Click += ConsoleButton_Click;
             // 
             // SelectDirForm
             // 
             AutoScaleMode = AutoScaleMode.None;
-            BackColor = Color.FromArgb(255, 128, 128);
+            BackColor = Color.Black;
+            BackgroundImage = Properties.Resources.bg0;
             ClientSize = new Size(323, 305);
             ControlBox = false;
             Controls.Add(ConsoleButton);
-            Controls.Add(pictureBox1);
             Controls.Add(ExitButton);
             Controls.Add(SearchButton);
-            Controls.Add(ParentDirText);
             Controls.Add(SelectButton);
+            Controls.Add(pictureBox1);
+            Controls.Add(ParentDirText);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -142,6 +157,10 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "S Icon Master - Select Directory";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SelectButton).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SearchButton).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ExitButton).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ConsoleButton).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,11 +168,11 @@
         #endregion
 
         private Label label1;
-        private Button SelectButton;
         private RichTextBox ParentDirText;
-        private Button SearchButton;
-        private Button ExitButton;
         private PictureBox pictureBox1;
-        private Button ConsoleButton;
+        private PictureBox SelectButton;
+        private PictureBox SearchButton;
+        private PictureBox ExitButton;
+        private PictureBox ConsoleButton;
     }
 }
